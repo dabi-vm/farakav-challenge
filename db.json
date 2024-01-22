@@ -1,0 +1,90 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": {
+        "firstname": "John",
+        "lastname": "Doe"
+      },
+      "profile": {
+        "gender": "Male",
+        "interest": "Programming",
+        "picture": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1.jpg"
+      },
+      "address": {
+        "city": "New York",
+        "street": "123 Main St",
+        "zip code": "10001"
+      }
+    },
+    {
+      "id": "2",
+      "name": {
+        "firstname": "Jane",
+        "lastname": "Doe"
+      },
+      "profile": {
+        "gender": "Female",
+        "interest": "Design",
+        "picture": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/2.jpg"
+      },
+      "address": {
+        "city": "Los Angeles",
+        "street": "456 Main St",
+        "zip code": "90001"
+      }
+    },
+    {
+      "id": "3",
+
+      "name": {
+        "firstname": "Alice",
+        "lastname": "Smith"
+      },
+      "profile": {
+        "gender": "female",
+        "interest": "gardening",
+        "picture": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/3.jpg"
+      },
+      "address": {
+        "city": "London",
+        "street": "Baker Street",
+        "zip code": "SW1A 0AA"
+      }
+    },
+    {
+      "id": "4",
+      "name": {
+        "firstname": "Bob",
+        "lastname": "Jones"
+      },
+      "profile": {
+        "gender": "male",
+        "interest": "chess",
+        "picture": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/4.jpg"
+      },
+      "address": {
+        "city": "New York",
+        "street": "Broadway",
+        "zip code": "10036"
+      }
+    },
+    {
+      "id": "5",
+      "name": {
+        "firstname": "Charlie",
+        "lastname": "Lee"
+      },
+      "profile": {
+        "gender": "non-binary",
+        "interest": "coding",
+        "picture": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/5.jpg"
+      },
+      "address": {
+        "city": "Beijing",
+        "street": "Chang'an Avenue",
+        "zip code": "100006"
+      }
+    }
+  ]
+}
