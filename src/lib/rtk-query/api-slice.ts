@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     cache: "default",
-    baseUrl: "",
+    baseUrl: process.env.DB_HOST,
     responseHandler: async (response) => {
       if (response.status === 401) {
         window.location.replace("/login");
@@ -16,6 +16,6 @@ export const apiSlice = createApi({
       return response.json();
     },
   }),
-  tagTypes: [],
+  tagTypes: ["users"],
   endpoints: () => ({}),
 });

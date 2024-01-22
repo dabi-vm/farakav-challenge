@@ -3,8 +3,8 @@
     {
       "id": "1",
       "name": {
-        "firstname": "John",
-        "lastname": "Doe"
+        "firstName": "John",
+        "lastName": "Doe"
       },
       "profile": {
         "gender": "Male",
@@ -20,8 +20,8 @@
     {
       "id": "2",
       "name": {
-        "firstname": "Jane",
-        "lastname": "Doe"
+        "firstName": "Jane",
+        "lastName": "Doe"
       },
       "profile": {
         "gender": "Female",
@@ -38,8 +38,8 @@
       "id": "3",
 
       "name": {
-        "firstname": "Alice",
-        "lastname": "Smith"
+        "firstName": "Alice",
+        "lastName": "Smith"
       },
       "profile": {
         "gender": "female",
@@ -55,8 +55,8 @@
     {
       "id": "4",
       "name": {
-        "firstname": "Bob",
-        "lastname": "Jones"
+        "firstName": "Bob",
+        "lastName": "Jones"
       },
       "profile": {
         "gender": "male",
@@ -72,8 +72,8 @@
     {
       "id": "5",
       "name": {
-        "firstname": "Charlie",
-        "lastname": "Lee"
+        "firstName": "Charlie",
+        "lastName": "Lee"
       },
       "profile": {
         "gender": "non-binary",
