@@ -1,15 +1,20 @@
-import { apiSlice, reducer } from "@farakav-challenge/lib";
 import { configureStore } from "@reduxjs/toolkit";
 import {
   useDispatch as useReduxDispatch,
   useSelector as useReduxSelector,
   type TypedUseSelectorHook,
 } from "react-redux";
+import { apiSlice } from "../rtk-query";
+import { mainSlice } from "./slices";
 
 export const reduxStore = configureStore({
-  reducer,
+  reducer: {
+    main: mainSlice.reducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
+  },
+
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(apiSlice.middleware),
+    getDefaultMiddleware({}).concat([apiSlice.middleware]),
 });
 export const useDispatch = () => useReduxDispatch<ReduxDispatch>();
 export const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector;

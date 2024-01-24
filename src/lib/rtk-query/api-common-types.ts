@@ -3,7 +3,7 @@ type Pagination = {
   per_page: number;
 };
 
-declare type RequestArgs<Body = undefined> = {
+export type RequestArgs<Body = undefined> = {
   body?: Body;
   params?: Partial<Pagination> & object;
 };
