@@ -1,11 +1,15 @@
 import { User } from "@farakav-challenge/lib";
+import LoadingCardSkeleton from "@farakav-challenge/pages/users/components/LoadingCardSkeleton";
 import { Typography } from "@mui/material";
 import { StyledUserAvatar } from "./UserCard.styles";
 
 type UserDetailsProps = {
-  user: Partial<User>;
+  user?: User;
+  loading: boolean;
 };
-const UserDetails = ({ user }: UserDetailsProps) => {
+const UserDetails = ({ user, loading }: UserDetailsProps) => {
+  if (loading) return <LoadingCardSkeleton />;
+
   return (
     <>
       <StyledUserAvatar
