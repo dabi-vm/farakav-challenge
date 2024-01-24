@@ -1,7 +1,7 @@
-import { ThemeOptions } from '@mui/material'
+import { ThemeOptions } from "@mui/material";
 
 export const themeOptions: ThemeOptions = {
-  direction: 'rtl',
+  direction: "rtl",
   spacing: 4,
   shape: { borderRadius: 4 },
-}
+};
