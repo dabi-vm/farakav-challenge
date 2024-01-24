@@ -1,6 +1,6 @@
 type Pagination = {
-  page: number;
-  per_page: number;
+  _page: number;
+  _per_page: number;
 };
 
 export type RequestArgs<Body = undefined> = {

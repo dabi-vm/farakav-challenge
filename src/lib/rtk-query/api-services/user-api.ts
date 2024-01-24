@@ -1,10 +1,10 @@
-import { User, apiSlice } from "@farakav-challenge/lib";
+import { RequestArgs, User, apiSlice } from "@farakav-challenge/lib";
 
 const userApi = apiSlice.injectEndpoints({
   endpoints: (build) => ({
     getUsers: build.query<User[], RequestArgs>({
       query: (arg) => ({
-        url: "/users",
+        url: "/usersData",
         method: "GET",
         params: arg.params,
       }),
