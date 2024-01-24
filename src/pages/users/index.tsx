@@ -2,17 +2,18 @@ import { CSelect } from "@farakav-challenge/components/ui-components";
 import { setUser, useDispatch } from "@farakav-challenge/lib";
 import { useGetUsersQuery } from "@farakav-challenge/lib/rtk-query/api-services/user-api";
 import { Grid } from "@mui/material";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 import UserCard from "./components/UserCard";
 
 const Index = () => {
-  const [isEdit, setIsEdit] = useState(false);
   const dispatch = useDispatch();
-  const { data } = useGetUsersQuery({});
+  const { data, isLoading } = useGetUsersQuery({});
+  const router = useRouter();
 
   const handleSelectUser = (id: string) => {
     const user = data?.find((user) => user.id === id);
     if (user) dispatch(setUser(user));
+    router.push(`/users/${id}`);
   };
 
   return (
@@ -21,15 +22,15 @@ const Index = () => {
         <CSelect
           options={
             data?.map((user) => ({
-              label: user.name.firstName,
-              value: user.id,
+              label: user?.name?.firstName,
+              value: user?.id,
             })) || []
           }
           onChange={(e) => handleSelectUser(e.target.value)}
           label="Users"
         />
       </Grid>
-      <UserCard {...{ isEdit, setIsEdit }} />
+      <UserCard loading={isLoading} />
     </Grid>
   );
 };

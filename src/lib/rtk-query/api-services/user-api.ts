@@ -12,13 +12,13 @@ const userApi = apiSlice.injectEndpoints({
     }),
     getUser: build.query<User, { id: string }>({
       query: (arg) => ({
-        url: `/users/${arg.id}`,
+        url: `/usersData/${arg.id}`,
         method: "GET",
       }),
     }),
     addUser: build.mutation<unknown, User>({
       query: (arg) => ({
-        url: "/users",
+        url: "/usersData",
         method: "POST",
         body: arg,
       }),
@@ -26,7 +26,7 @@ const userApi = apiSlice.injectEndpoints({
     }),
     modifyUser: build.mutation<unknown, User>({
       query: (arg) => ({
-        url: `/users/${arg.id}`,
+        url: `/usersData/${arg.id}`,
         method: "PUT",
         body: arg,
       }),
@@ -34,7 +34,7 @@ const userApi = apiSlice.injectEndpoints({
     }),
     deleteUser: build.mutation<unknown, { id: string }>({
       query: (arg) => ({
-        url: `/users/${arg.id}`,
+        url: `/usersData/${arg.id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["users"],

@@ -1,4 +1,4 @@
-import { Avatar, Card, Chip, styled } from "@mui/material";
+import { Avatar, Card, Chip, Fab, styled } from "@mui/material";
 
 export const StyledUserCard = styled(Card)(({ theme }) => ({
   position: "relative",
@@ -15,4 +15,11 @@ export const StyledUserAvatar = styled(Avatar)(({ theme }) => ({
 export const StyledUserChip = styled(Chip)(({ theme }) => ({
   position: "absolute",
   right: theme.spacing(2),
+  top: theme.spacing(2),
+}));
+
+export const StyledFab = styled(Fab)(({ theme }) => ({
+  position: "absolute",
+  right: theme.spacing(10),
+  bottom: theme.spacing(10),
 }));
