@@ -19,6 +19,6 @@ npm run dev
 ```
 
 <div dir='rtl' align='right'>
-همه برنچ ها روی develop مرج شده اند.
+همه برنچ ها روی main مرج شده اند.
 با سپاس از شما
 </div>
