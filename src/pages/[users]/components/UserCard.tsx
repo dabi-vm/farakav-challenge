@@ -2,6 +2,7 @@ import { User } from "@farakav-challenge/lib";
 import {
   StyledUserAvatar,
   StyledUserCard,
+  StyledUserChip,
 } from "@farakav-challenge/pages/[users]/components/UserCard.styles";
 import { CardContent, Grid, Typography } from "@mui/material";
 
@@ -13,6 +14,14 @@ const UserCard = ({ user }: UserCardProps) => {
   return (
     <Grid item xs={12}>
       <StyledUserCard>
+        <StyledUserChip
+          label="Edit"
+          variant="outlined"
+          color="secondary"
+          size="small"
+          onClick={() => {}}
+        />
+
         <CardContent>
           <StyledUserAvatar
             alt={user.name.firstName}
