@@ -8,6 +8,7 @@ import {
 } from "@farakav-challenge/lib";
 import {
   useAddUserMutation,
+  useGetUserQuery,
   useModifyUserMutation,
 } from "@farakav-challenge/lib/rtk-query/api-services/user-api";
 import {
@@ -16,16 +17,15 @@ import {
   StyledUserChip,
 } from "@farakav-challenge/pages/users/components/UserCard.styles";
 import { CardContent, Grid, Typography } from "@mui/material";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import LoadingCardSkeleton from "./LoadingCardSkeleton";
-import UserDetails from "./UserDetails";
+import Users from "..";
+import UserDetails from "../components/UserDetails";
 
-type UserCardProps = {
-  loading: boolean;
-};
-
-const UserCard = ({ loading }: UserCardProps) => {
+const Index = () => {
+  const router = useRouter();
+  const id = router.query.id;
   const user = useSelector((state) => state.main);
   const formProvider = useForm<User>({
     defaultValues: {},
@@ -33,6 +33,12 @@ const UserCard = ({ loading }: UserCardProps) => {
   const dispatch = useDispatch();
   const [isEdit, setIsEdit] = useState(false);
 
+  const { data: userQueryData, isLoading: userQueryLoading } = useGetUserQuery(
+    { id: id as string },
+    {
+      skip: !id,
+    }
+  );
   const [addUser] = useAddUserMutation();
   const [modifyUser] = useModifyUserMutation();
 
@@ -72,8 +78,8 @@ const UserCard = ({ loading }: UserCardProps) => {
   }, [user.id]);
 
   return (
-    <Grid item xs={12}>
-      {Boolean(user?.name?.firstName) || isEdit ? (
+    <Users>
+      <Grid item xs={12}>
         <StyledUserCard>
           <CardContent>
             <StyledUserChip
@@ -192,21 +198,24 @@ const UserCard = ({ loading }: UserCardProps) => {
                   />
                 </Grid>
               </>
-            ) : loading ? (
-              <LoadingCardSkeleton />
             ) : (
-              <UserDetails user={user} />
+              <UserDetails loading={userQueryLoading} user={userQueryData} />
             )}
           </CardContent>
         </StyledUserCard>
-      ) : null}
-      {!isEdit && (
-        <StyledFab aria-label="add" variant="extended" onClick={handleAddClick}>
-          <Typography variant="h6">+</Typography>
-        </StyledFab>
-      )}
-    </Grid>
+
+        {!isEdit && (
+          <StyledFab
+            aria-label="add"
+            variant="extended"
+            onClick={handleAddClick}
+          >
+            <Typography variant="h6">+</Typography>
+          </StyledFab>
+        )}
+      </Grid>
+    </Users>
   );
 };
 
-export default UserCard;
+export default Index;
