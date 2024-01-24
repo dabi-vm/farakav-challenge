@@ -1,6 +1,7 @@
 import { CSelect } from "@farakav-challenge/components/ui-components";
 import { User } from "@farakav-challenge/lib";
 import { Grid } from "@mui/material";
+import { useState } from "react";
 import UserCard from "./components/UserCard";
 
 const user: User = {
@@ -22,12 +23,13 @@ const user: User = {
 };
 
 const Index = () => {
+  const [isEdit, setIsEdit] = useState(false);
   return (
     <Grid container p={4}>
       <Grid item xs={12} md={6}>
         <CSelect options={[]} label="Users" />
       </Grid>
-      <UserCard user={user} />
+      <UserCard user={user} {...{ isEdit, setIsEdit }} />
     </Grid>
   );
 };
