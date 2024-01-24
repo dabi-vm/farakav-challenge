@@ -1,15 +1,16 @@
-import { TextField, TextFieldProps } from "@mui/material";
+import { TextFieldProps } from "@mui/material";
 import { ForwardedRef, forwardRef } from "react";
+import { StyledTextField } from "./CTextFiled.styles";
 
 export type CTextFieldProps = Omit<TextFieldProps, "ref">;
 
 export const CTextField = forwardRef(
   <T extends HTMLDivElement>(
-    { type, size = "small", inputProps, ...props }: CTextFieldProps,
+    { type, inputProps, ...props }: CTextFieldProps,
     ref: ForwardedRef<T>
   ) => {
     return (
-      <TextField
+      <StyledTextField
         ref={ref}
         inputProps={{
           ...(type === "number" && {
@@ -17,6 +18,8 @@ export const CTextField = forwardRef(
           }),
           ...inputProps,
         }}
+        size="small"
+        variant="standard"
         {...props}
       />
     );

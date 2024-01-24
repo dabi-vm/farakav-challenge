@@ -12,6 +12,6 @@ export type User = {
   address: {
     city: string;
     street: string;
-    "zip code": string;
+    zipCode: string;
   };
 };
