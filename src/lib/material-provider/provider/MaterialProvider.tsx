@@ -15,7 +15,7 @@ export const MaterialProvider = ({
   theme,
 }: PropsWithChildren<IProps>) => {
   const cacheRtl = createCache({
-    key: "muiCache",
+    key: "mui-cache",
   });
   const innerTheme = theme?.(themeOptions);
   const usedTheme = useMemo(
