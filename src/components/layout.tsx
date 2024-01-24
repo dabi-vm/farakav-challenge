@@ -12,6 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
   const path = router.asPath.split("/");
   const lastPathPart = path[path.length - 1];
 
+  // generate page title based on the last part of the path
   const pageTitle =
     lastPathPart === ""
       ? "Home"

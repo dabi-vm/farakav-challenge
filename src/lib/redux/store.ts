@@ -5,11 +5,11 @@ import {
   type TypedUseSelectorHook,
 } from "react-redux";
 import { apiSlice } from "../rtk-query";
-import { mainSlice } from "./slices";
+import { userSlice } from "./slices";
 
 export const reduxStore = configureStore({
   reducer: {
-    main: mainSlice.reducer,
+    main: userSlice.reducer,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
 

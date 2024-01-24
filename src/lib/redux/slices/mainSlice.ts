@@ -7,8 +7,8 @@ const initialState: Partial<User> = {
   address: undefined,
   profile: undefined,
 };
-export const mainSlice = createSlice({
-  name: "main",
+export const userSlice = createSlice({
+  name: "user",
   initialState,
   reducers: {
     setUser(_, action) {
@@ -21,6 +21,6 @@ export const mainSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setUser, clearState } = mainSlice.actions;
+export const { setUser, clearState } = userSlice.actions;
 
-export default mainSlice.reducer;
+export default userSlice.reducer;

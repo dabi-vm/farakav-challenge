@@ -1,7 +1,6 @@
-// Need to use the React-specific entry point to allow generating React hooks
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-// Define a service using a base URL and expected endpoints
+// Note: Root api slice & config for rtk-query defined here
 export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     cache: "default",
